@@ -18,7 +18,7 @@ RSpec.describe DashboardController, type: :controller do
         it "requires authorization" do
           # nother org
           get :index, params: { organization_id: create(:organization).to_param }
-          expect(response).to have_http_status(403)
+          expect(response).to have_http_status(302)
         end
       end
     end
